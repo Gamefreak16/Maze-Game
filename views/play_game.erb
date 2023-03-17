@@ -1,0 +1,19 @@
+<html>
+    <body>
+    <p>-----------------------------------------</p>
+    <p>You are in room : <%=@console.current_room%> </p>
+    <% @console.explore_room.each do |f|%>
+    <p><%=f%></p>
+    <%end%>
+    <p> Exits go to <<%=@console.player_exits%>></p>
+    <p>-----------------------------------------</p>
+    <p><%=@console.reaction%></p>
+<form action="/play_game" method = "post">
+<input type="hidden" name="_method" value="PUT">
+<label for ="faction">Action (m/s): </label>
+<input type = "text" id="faction" name = "faction"><br><br>
+<label for ="froom">Room: </label>
+<input type = "text" id="froom" name = "froom"> <br><br>
+<input type = "submit" value = "Submit"> </form>
+    </body>
+</html>
